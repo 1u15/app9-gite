@@ -5,13 +5,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 });
 
-function onDeviceReady(){
-	
+function onDeviceReady(){	
 	$('#posicion').on('click',function(){
 		getPosition ();
 	});
 	
-	$('watch').on('click',function(){
+	$('#watch').on('click',function(){
 		watchPosition ();
 	});
 
@@ -48,7 +47,7 @@ function watchPosition(){
 		enableHighAccuracy :true,
 		
 	}
-	var watchID=navigator.geolocation.watchPosition(onSuccess, onError, options);
+	var watchID=navigator.geolocation.watchPosition(onSuccess,onError,options);
 	function onSuccess(position){
 		
 		$('#latitud').html(position.coords.latitude);
